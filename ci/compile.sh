@@ -5,6 +5,8 @@ ls -lsh
 
 ./mvnw package
 
-cp -r target output-https-only-tests-master
+# convention: output-<repoName>-<taskname>
 
-ls -lsh output-https-only-tests-master
+cp -r target output-https-only-tests-master-compile
+
+ls -lsh output-https-only-tests-master-compile
