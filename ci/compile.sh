@@ -1,5 +1,9 @@
 #!/bin/bash
 
+echo "../artifactory"
+ls -lsh ../artifactory
+echo ""
+
 cd https-only-tests-master
 ls -lsh
 
