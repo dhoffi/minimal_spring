@@ -3,6 +3,9 @@
 cd https-only-tests-master
 ls -lsh
 
+echo ""
+echo "targetEnv=${TARGET_ENV}"
+echo ""
 ./mvnw package
 
 # convention: output-<repoName>-<taskname>
