@@ -6,7 +6,7 @@ ls -lsh
 echo ""
 echo "targetEnv=${TARGET_ENV}"
 echo ""
-./mvnw package
+echo "not implemented yet"
 
 # output convention: output-<repoName>-deploy
 cp -r target output-https-only-tests-master-check
