@@ -20,7 +20,10 @@ function main() {
     echo ""
     # ./mvnw package
     ./mvnw install
-
+    rm target/*.jar
+    rm target/*.jar.original
+    mkdir -p target/com/example/demo
+    cp -rf ~/.m2/repository/com/example/demo/* target/com/example/demo
 
     echo "https-only-tests-master:"
     ls -lsha
@@ -29,8 +32,12 @@ function main() {
 
     # convention: output-<repoName>-<taskname>
     cp -r . ../output-https-only-tests-master-compile
+
+
     echo "output-https-only-tests-master-compile:"
     ls -lsha ../output-https-only-tests-master-compile
+    echo "output-https-only-tests-master-compile/target:"
+    ls -lsha ../output-https-only-tests-master-compile/target
 }
  
 # mkdir "${HOME}/.m2"
