@@ -2,8 +2,8 @@
 
 set -e
 
-cd https-only-tests-master
 export ROOT_FOLDER=$(pwd)
+cd https-only-tests-master
 
 function main() {
     if [ -d "../artifactory" ]; then
@@ -36,7 +36,6 @@ function main() {
 # mkdir "${HOME}/.m2"
 M2_HOME="${HOME}/.m2"
 M2_CACHE="${ROOT_FOLDER}/maven"
-# mkdir "${HOME}/.gradle"
 GRADLE_HOME="${HOME}/.gradle"
 GRADLE_CACHE="${ROOT_FOLDER}/gradle"
  
