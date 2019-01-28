@@ -28,9 +28,9 @@ function main() {
     ls -lsha target
 
     # convention: output-<repoName>-<taskname>
-    cp -rT ../https-only-tests-master output-https-only-tests-master-compile
+    cp -r . ../output-https-only-tests-master-compile
     echo "output-https-only-tests-master-compile:"
-    ls -lsha output-https-only-tests-master-compile
+    ls -lsha ../output-https-only-tests-master-compile
 }
  
 # mkdir "${HOME}/.m2"
