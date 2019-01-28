@@ -1,14 +1,20 @@
 #!/bin/bash
 
-cd https-only-tests-master
-ls -lsh
+set -e
 
-echo ""
-echo "targetEnv=${TARGET_ENV}"
-echo ""
-echo "not implemented yet"
+export ROOT_FOLDER=$(pwd)
+# cd https-only-tests-master
 
-# output convention: output-<repoName>-deploy
-cp -r target output-https-only-tests-master-check
+function main() {
+    ls -lsha output-https-only-tests-master-deploy
 
-ls -lsh output-https-only-tests-master-check
+    echo ""
+    echo "targetEnv=${TARGET_ENV}"
+    echo ""
+    echo 'not implemented yet'
+
+    # output convention: output-<repoName>-check
+    cp -r ../output-https-only-tests-master-deploy ../output-https-only-tests-master-check
+
+    ls -lsha ../output-https-only-tests-master-check
+}
