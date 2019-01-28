@@ -20,8 +20,6 @@ function main() {
     ls -lsh output-https-only-tests-master-compile
 }
 
-main
-
 cat <<EOT > ~/.m2/settings.xml
 <?xml version='1.0' encoding='UTF-8'?>
 <settings xsi:schemaLocation='http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd'
@@ -56,3 +54,5 @@ cat <<EOT > ~/.m2/settings.xml
     </activeProfiles>
 </settings>
 EOT
+
+main
