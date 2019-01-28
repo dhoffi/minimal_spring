@@ -22,8 +22,8 @@ function main() {
     ./mvnw install
     rm target/*.jar
     rm target/*.jar.original
-    mkdir -p target/com/example/demo
-    cp -rf ~/.m2/repository/com/example/demo/* target/com/example/demo
+    mkdir -p target/m2/com/example/demo
+    cp -rf ~/.m2/repository/com/example/demo/* target/m2/com/example/demo
 
     echo "https-only-tests-master:"
     ls -lsha
