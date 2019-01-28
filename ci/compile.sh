@@ -31,10 +31,10 @@ function main() {
     ls -lsha output-https-only-tests-master-compile
 }
  
-mkdir "${HOME}/.m2"
+# mkdir "${HOME}/.m2"
 M2_HOME="${HOME}/.m2"
 M2_CACHE="${ROOT_FOLDER}/maven"
-mkdir "${HOME}/.gradle"
+# mkdir "${HOME}/.gradle"
 GRADLE_HOME="${HOME}/.gradle"
 GRADLE_CACHE="${ROOT_FOLDER}/gradle"
  
