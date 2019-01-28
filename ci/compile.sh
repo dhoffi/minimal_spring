@@ -16,8 +16,13 @@ function main() {
     echo ""
     ./mvnw package
 
-    # convention: output-<repoName>-<taskname>
 
+    echo "https-only-tests-master:"
+    ls -lsh
+    echo "https-only-tests-master/target:"
+    ls -lsh target
+
+    # convention: output-<repoName>-<taskname>
     cp -r target output-https-only-tests-master-compile
     echo "output-https-only-tests-master-compile:"
     ls -lsh output-https-only-tests-master-compile
