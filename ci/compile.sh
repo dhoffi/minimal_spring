@@ -6,10 +6,12 @@ cd https-only-tests-master
 export ROOT_FOLDER=$(pwd)
 
 function main() {
-    echo "../artifactory"
-    ls -lsha ../artifactory
-    echo ""
-
+    if [ -d "../artifactory" ]; then
+      echo "../artifactory"
+      ls -lsha ../artifactory
+      echo ""
+    fi
+    
     echo "https-only-tests-master:"
     ls -lsha
 
@@ -44,7 +46,7 @@ set -x
 [[ -d "${GRADLE_CACHE}" && ! -d "${GRADLE_HOME}" ]] && ln -s "${GRADLE_CACHE}" "${GRADLE_HOME}"
 set +x
 
-cat <<EOT > ~/.m2/settings.xml
+cat <<EOT > ${HOME}/.m2/settings.xml
 <?xml version='1.0' encoding='UTF-8'?>
 <settings xsi:schemaLocation='http://maven.apache.org/SETTINGS/1.0.0 http://maven.apache.org/xsd/settings-1.0.0.xsd'
           xmlns='http://maven.apache.org/SETTINGS/1.0.0' xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'>
