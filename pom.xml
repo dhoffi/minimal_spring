@@ -1,17 +1,17 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+<?xml	version="1.0"	encoding="UTF-8"?>
+<project	xmlns="http://maven.apache.org/POM/4.0.0"	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0	http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
 		<version>2.1.2.RELEASE</version>
-		<relativePath/> <!-- lookup parent from repository -->
+		<relativePath	/>	<!--	lookup	parent	from	repository	-->
 	</parent>
 	<groupId>com.example</groupId>
-	<artifactId>demo</artifactId>
+	<artifactId>minimal_spring</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>demo</name>
+	<name>minimal_spring</name>
 	<description>Demo project for Spring Boot</description>
 
 	<properties>
@@ -47,32 +47,64 @@
 			</plugin>
 			<plugin>
 				<groupId>org.jfrog.buildinfo</groupId>
-					<artifactId>artifactory-maven-plugin</artifactId>
-					<version>2.6.1</version>
-					<inherited>false</inherited>
-					<executions>
-						<execution>
-							<id>build-info</id>
-							<goals>
-								<goal>publish</goal>
-							</goals>
-							<configuration>
-								<deployProperties>
-									<gradle>awesome</gradle>
-									<review.team>qa</review.team>
-								</deployProperties>
-								<publisher>
-									<contextUrl>http://localhost:8081/artifactory</contextUrl>
-									<username>admin</username>
-									<password>admin</password>
-									<repoKey>libs-release-local</repoKey>
-									<snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
-								</publisher>
-							</configuration>
-						</execution>
-					</executions>
+				<artifactId>artifactory-maven-plugin</artifactId>
+				<version>2.6.1</version>
+				<inherited>false</inherited>
+				<executions>
+					<execution>
+						<id>build-info</id>
+						<goals>
+							<goal>publish</goal>
+						</goals>
+						<configuration>
+							<deployProperties>
+								<gradle>awesome</gradle>
+								<review.team>qa</review.team>
+							</deployProperties>
+							<publisher>
+								<contextUrl>http://localhost:8081/artifactory</contextUrl>
+								<username>admin</username>
+								<password>admin</password>
+								<repoKey>libs-release-local</repoKey>
+								<snapshotRepoKey>libs-snapshot-local</snapshotRepoKey>
+							</publisher>
+						</configuration>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings only.
+					It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+									<groupId>org.jfrog.buildinfo</groupId>
+									<artifactId>artifactory-maven-plugin</artifactId>
+										<versionRange>[2.6,)</versionRange>
+										<goals>
+											<goal>publish</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore/>
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+
 	</build>
 
 </project>

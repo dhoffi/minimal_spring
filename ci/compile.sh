@@ -22,8 +22,8 @@ function main() {
     ./mvnw install
     rm target/*.jar
     rm target/*.jar.original
-    mkdir -p target/m2/com/example/demo
-    cp -rf ~/.m2/repository/com/example/demo/* target/m2/com/example/demo
+    mkdir -p target/m2/com/example/minimal_spring
+    cp -rf ~/.m2/repository/com/example/minimal_spring/* target/m2/com/example/minimal_spring
 
     echo "https-only-tests-master:"
     ls -lsha
@@ -40,7 +40,6 @@ function main() {
     ls -lsha ../output-https-only-tests-master-compile/target
 }
  
-# mkdir "${HOME}/.m2"
 M2_HOME="${HOME}/.m2"
 M2_CACHE="${ROOT_FOLDER}/maven"
 GRADLE_HOME="${HOME}/.gradle"
